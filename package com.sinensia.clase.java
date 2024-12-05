@@ -8,7 +8,7 @@ package com.sinensia.clase.volei;
  * Cualidades del jugador que pueden fluctuar:
  * posición y numero de camiseta
  */
-public class JugadorVoleibol{
+public class JugadorVoleibol {
 
     final double estatura;
 
@@ -22,7 +22,7 @@ public class JugadorVoleibol{
 
     private int numeroCamiseta;
 
-    Public JugadorVoleibol(double estatura, double salto, String nombre, int edad, String posicion, int numeroCamiseta){
+    Public JugadorVoleibol(double estatura, double salto, String nombre, int edad, String posicion, int numeroCamiseta) {
         this.estatura=estatura;
         this.salto=salto;
         this.nombre=nombre;
@@ -59,18 +59,28 @@ public class JugadorVoleibol{
     //creamos el main
     public static void main(String[] args){
         JugadorVoleibol jugador = new JugadorVoleibol(1.78, 0.34, "Rocío Jurado", 21, "Opuesta", 33);
-        jugador.datos¨();
+        jugador.datos();
     }
+    //Creamos una lista vacía de Strings en la que vamos a ir almacenando los equipos en los que va jugando el jugador
+    List<String> equipos = new ArrayList<>();
+        equipos.add("Alcobendas");
+        equipos.add("Leganés");
+        equipos.add("Fuenlabrada");
+
+    String ultimoEquipo = equipos.get(2); // Accedemos así al último equipo en el que ha jugado el jugador
+    System.out.println(ultimoEquipo);
+
+
 }
 
 //Hacemos una clase hijo para jugadoras mujeres
 public class Jugadora extends JugadorVoleibol {
     //Definimos una constante static para indicar que esta clase solo toma jugadoras de genero femenino
-    public static final String GENERO = "femenino"
+    public static final String GENERO = "femenino";
 
     //El constructor usa super y accede al de la superclase
-    public Jugadora(double estatura, double salto, String nombre, int edad, String posicion, int numeroCamiseta){
-        super(estatura, salto, nombre, edad, posicion, numeroCamiseta)
+    public Jugadora(double estatura, double salto, String nombre, int edad, String posicion, int numeroCamiseta) {
+        super(estatura, salto, nombre, edad, posicion, numeroCamiseta);
     }
 
     //Empleamos override para sacar los datos relevantes de la jugadora añadiendo genero a datos, llamandolo de la clasd padre
